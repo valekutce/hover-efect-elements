@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flip card effect</title>
+    <script src="https://kit.fontawesome.com/691fa1f4eb.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body{
+        background-color: #292929;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+    }
+    .cardbox{
+perspective: 500px;
+margin: 15px;
+    }
+    .card{
+        position: relative;
+        width: 150px;
+        height: 150px;
+        background-color: #fff;
+        transform-style: preserve-3d;
+        transition: .5s ease;
+        box-shadow: 0 30px 30px rgba(0, 0, 0,.5);
+    }
+    .facebook{
+background-color: #1877F2;
+    }
+    .google{
+background-color:  #DB4437;;
+    }
+    .instagram{
+        background-color: #E4405F;
+    }
+    .cardfront , .cardback{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 150px;
+        height: 150px;
+        color: #fff;
+        backface-visibility: hidden;
+    }
+    .cardfront{
+        display: flex;
+        font-size: 40px;
+        justify-content: center;
+        align-items: center;
+
+    }
+    .cardback{
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        align-items: center;
+        
+    }
+     .cardbox:hover .card{
+        /* transition: all .5s; */
+        transform: rotateY(180deg);
+        /* background-color: #292929; */
+     } 
+     .cardback{
+        transform: rotateY(180deg);
+    } 
+</style>
+<body>
+    <div class="cardbox">
+        <div class="card facebook">
+            <div class="cardfront"><i class="fab fa-facebook"></i></div>
+            <div class="cardback">Facebook</div>
+        </div>
+    </div>
+    <div class="cardbox">
+        <div class="card google">
+            <div class="cardfront"><i class="fab fa-google"></i></div>
+            <div class="cardback">Google</div>
+        </div>
+    </div>
+    <div class="cardbox">
+        <div class="card instagram">
+            <div class="cardfront"><i class="fab fa-instagram"></i></div>
+            <div class="cardback">Instagram</div>
+        </div>
+    </div>
+</body>
+</html>
